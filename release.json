@@ -1,0 +1,22 @@
+{
+    "name": "j2render",
+    "description": "A Jinja2 CLI for template warriors.",
+    "version": "1.0.0",
+    "url": "https://github.com/mojochao/j2render",
+    "author": "Allen Gooch",
+    "author_email": "allen.gooch@gmail.com",
+    "maintainer": "Allen Gooch",
+    "maintainer_email": "allen.gooch@gmail.com",
+    "license": "MIT",
+    "classifiers": [
+        "Development Status :: 5 - Production/Stable",
+        "Natural Language :: English",
+        "Programming Language :: Python :: 2.7",
+        "Programming Language :: Python :: 3.6",
+        "License :: OSI Approved :: MIT License"
+    ],
+    "keywords": [
+        "configuration",
+        "utility"
+    ]
+}

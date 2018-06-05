@@ -1,0 +1,19 @@
+-r requirements.txt
+coverage
+detox
+fabric
+flake8
+pep8
+pytest>=3.6.0
+pytest-cov
+pytest-flake8
+pytest-html
+pytest-isort
+pytest-runner
+pytest-xdist
+sphinx
+sphinx_rtd_theme
+sphinxcontrib-napoleon
+sphinxcontrib-programoutput
+tox
+twine
