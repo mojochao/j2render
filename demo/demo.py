@@ -1,0 +1,11 @@
+config = {
+  "greeting": "Hello",
+  "subject": "World",
+  "inner": {
+    "prop1": "alpha",
+    "prop2": "beta",
+    "prop3": "gamma",
+    "prop4": "delta",
+    "prop5": "epsilon"
+  }
+}

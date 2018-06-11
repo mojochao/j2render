@@ -29,8 +29,14 @@ _VALID_FILE_FORMATS = set(_VALID_FILE_EXTENSIONS.values())
               help='Write output to named file or standard output.')
 @click.option('-d', '--output-dir', metavar='DIR',
               help='Write output to named directory.')
+@click.option('--no-trim-blocks', is_flag=True,
+              help='Render with trim_blocks=False.')
+@click.option('--no-lstrip-blocks', is_flag=True,
+              help='Render with lstrip_blocks=False.')
+@click.option('--no-trailing-newline', is_flag=True,
+              help='Render with keep_trailing_newline=False.')
 @click.argument('template')
-def cli(sources, variables, output, output_dir, template):
+def cli(sources, variables, output, output_dir, no_trim_blocks, no_lstrip_blocks, remove_trailing_newline, template):
     """j2render is a cli for jinja2 template rendering.
 
     The *--source* option may be provided multiple times and provides the
@@ -59,6 +65,7 @@ def cli(sources, variables, output, output_dir, template):
     The *--output-dir* option may be provided to name the directory.  If not
     provided, defaults to the directory containing the template.
 
+
     """
     try:
         # Load all template data from sources.
@@ -81,7 +88,7 @@ def cli(sources, variables, output, output_dir, template):
             raise RuntimeError('no template data found for template {}'.format(template))
 
         # Load template and render.
-        loaded = _load_template(template)
+        loaded = _load_template(template, not no_trim_blocks, not no_lstrip_blocks, not remove_trailing_newline)
         try:
             rendered = loaded.render(**template_variables)
         except jinja2.TemplateError as err:
@@ -134,11 +141,14 @@ def _find_data_file(path):
     return None
 
 
-def _load_template(path):
+def _load_template(path, trim_blocks=False, lstrip_blocks=False, keep_trailing_newline=False):
     """Load template from *path*.
 
     Args:
         path (str): template path
+        trim_blocks (bool): remove first newline after a block
+        lstrip_blocks (boo): remove leading spaces and tabs from the start of a line to a block
+        keep_trailing_newline (bool): preserve trailing newline in template
 
     Returns:
         jinja2.Template: found data file path
@@ -148,7 +158,11 @@ def _load_template(path):
     dir_path = os.path.dirname(path)
     template_name = os.path.basename(path)
     try:
-        env = jinja2.Environment(loader=jinja2.FileSystemLoader(dir_path))
+        env = jinja2.Environment(
+            loader=jinja2.FileSystemLoader(dir_path),
+            trim_blocks=trim_blocks,
+            lstrip_blocks=lstrip_blocks,
+            keep_trailing_newline=keep_trailing_newline)
         return env.get_template(template_name)
     except jinja2.TemplateError as err:
         raise RuntimeError('cannot load template {}: {}'.format(path, err))

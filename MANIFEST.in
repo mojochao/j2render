@@ -2,7 +2,10 @@ include *.cfg
 include *.ini
 include *.json
 include *.md
+include *.toml
 include *.txt
+include *.yaml
+include *.yml
 global-exclude *.py[co]
 graft docs
 graft tests
