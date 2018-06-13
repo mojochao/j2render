@@ -43,7 +43,6 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.napoleon',
     'sphinx.ext.viewcode',
-    'sphinxcontrib.programoutput',
 ]
 
 # Add any intersphinx mappings here for packages referred to in project sources.
