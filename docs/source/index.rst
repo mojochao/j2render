@@ -19,9 +19,9 @@ Install the **j2render** package from `PyPi <https://pypi.org>`_ with ``pip``::
 Help
 ====
 
-Use the *--help* option to get help on usage.
+Use the *--help* option to get help on usage::
 
-..  command-output:: j2render --help
+    $ j2render --help
 
 Usage
 =====
