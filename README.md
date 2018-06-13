@@ -10,11 +10,11 @@ in JSON, TOML and YAML files and on the command line to standard output or a fil
 
 ## Installation
 
-Install the **j2render** package from [PyPi](https://pypi.org>) with `pip`.
+Install the **j2render** package from [PyPi](https://pypi.org) with `pip`.
 
     $ pip install j2render
 
-# Help
+## Help
 
 Use the *--help* option to get help on usage.
 
@@ -23,6 +23,7 @@ Use the *--help* option to get help on usage.
 ## Resources
 
 - [GitHub project](https://github.com/mojochao/j2render)
+- [PyPI package](https://pypi.org/project/j2render/)
 - [Travis CI builds](https://travis-ci.org/mojochao/j2render/builds/)
 - [Read the Docs builds](https://readthedocs.org/projects/j2render/builds/)
 - [Read the Docs documentation](https://j2render.readthedocs.io/en/latest/)
