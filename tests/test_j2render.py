@@ -1,10 +1,13 @@
 import os
+import sys
 from copy import deepcopy
 
 import jinja2
 import pytest
 
 TESTS_DIR = os.path.dirname(__file__)
+PROJECT_DIR = os.path.abspath(os.path.join(TESTS_DIR, '..'))
+sys.path.insert(0, PROJECT_DIR)
 
 SAMPLE_DATA = {
     "greeting": "Hello",
