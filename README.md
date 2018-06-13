@@ -1,5 +1,9 @@
 # j2render
 
+[![Build Status](https://travis-ci.org/mojochao/j2render.svg?branch=master)](https://travis-ci.org/mojochao/j2render)
+
+[![Documentation Status](https://readthedocs.org/projects/j2render/badge/?version=latest)](http://j2render.readthedocs.io/?badge=latest)
+
 The **j2render** package provides the `j2render` command-line interface (CLI) for
 rendering [Jinja2 templates](http://jinja.pocoo.org/docs) from data provided
 in JSON, TOML and YAML files and on the command line to standard output or a file.
