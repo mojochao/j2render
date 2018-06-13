@@ -36,7 +36,7 @@ _VALID_FILE_FORMATS = set(_VALID_FILE_EXTENSIONS.values())
 @click.option('--no-trailing-newline', is_flag=True,
               help='Render with keep_trailing_newline=False.')
 @click.argument('template')
-def cli(sources, variables, output, output_dir, no_trim_blocks, no_lstrip_blocks, remove_trailing_newline, template):
+def cli(sources, variables, output, output_dir, no_trim_blocks, no_lstrip_blocks, no_trailing_newline, template):
     """j2render is a cli for jinja2 template rendering.
 
     The *--source* option may be provided multiple times and provides the
@@ -88,7 +88,7 @@ def cli(sources, variables, output, output_dir, no_trim_blocks, no_lstrip_blocks
             raise RuntimeError('no template data found for template {}'.format(template))
 
         # Load template and render.
-        loaded = _load_template(template, not no_trim_blocks, not no_lstrip_blocks, not remove_trailing_newline)
+        loaded = _load_template(template, not no_trim_blocks, not no_lstrip_blocks, not no_trailing_newline)
         try:
             rendered = loaded.render(**template_variables)
         except jinja2.TemplateError as err:

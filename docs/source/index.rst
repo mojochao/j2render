@@ -48,10 +48,15 @@ demo.yaml
 
 ..  literalinclude:: ../../demo/demo.yaml
 
-The ``demo.txt.j2`` template can be rendered to standard output with:
+The ``demo.txt.j2`` template can be rendered to standard output with::
 
-..  command-output:: j2render -o stdout demo.j2
-    :cwd: ../../demo
+    $ j2render -o stdout demo.j2
+    Hello, World!
+    alpha
+    beta
+    gamma
+    delta
+    epsilon
 
 If the *--output* option is not provided, rendered template output will be
 written to a file with the same name as the template, minus its Jinja extension.
@@ -87,10 +92,3 @@ the ``config`` attribute of the ``my.pkg`` module.
     :maxdepth: 1
 
     releases
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
